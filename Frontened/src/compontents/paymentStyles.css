@@ -1,0 +1,56 @@
+/* Global Style */
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Navbar */
+  .navbar {
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+  }
+  
+  /* Payment Card */
+  .payment-card {
+    background: linear-gradient(135deg, #f1f5f9, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+  }
+  
+  /* Payment Methods */
+  .payment-methods {
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .payment-methods .payment-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Button */
+  .payment-btn {
+    background-color: #28a745;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-btn:hover {
+    background-color: #218838;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input Fields */
+  .MDBInput {
+    border-radius: 12px;
+    border-color: #e0e0e0;
+    transition: all 0.3s ease;
+  }
+  
+  .MDBInput:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  }
+  

@@ -1,38 +1,82 @@
+
 import React from 'react';
-import bok from '/public/k.jpg'; // Make sure the image path is correct
+import { FaShoppingCart, FaTshirt } from 'react-icons/fa';  
+import clothesImage from '/public/ii.jpg';  
+import { motion } from 'framer-motion';  
+import { useNavigate } from 'react-router-dom';
 
 function Banner() {
-  return (
-    <>
-      <div className='max-w-screen-2xl container mx-auto md:px-20 px-2 flex flex-col md:flex-row items-center pt-24'>
-        <div className='w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-32 space-y-6'>
-          <h1 className='text-4xl font-bold text-gray-800 dark:text-white'>
-            Welcome to <span className='text-orange-500'>BookBazaar!</span>
-          </h1>
-          <p className='text-xl text-gray-700 dark:text-gray-300'>
-            Discover a wide range of books across genres. Our team is dedicated to providing you with the best reading experience.
-          </p>
-          <p className='text-lg text-gray-600 dark:text-gray-400'>
-            Join our community of passionate readers and enjoy exclusive offers, reviews, and personalized recommendations tailored just for you.
-          </p>
-          <p className='text-lg text-gray-600 dark:text-gray-400'>
-            Sign up for our newsletter to stay updated on the latest arrivals, bestsellers, and literary events!
-          </p>
-          <label className="input input-bordered flex items-center gap-2 mt-4 w-full md:w-3/4">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4 opacity-70">
-              <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-              <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-            </svg>
-            <input type="text" className="grow p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring focus:ring-orange-300" placeholder="Subscribe for updates" />
-          </label>
-          <button className="btn btn-accent mt-2 py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105">Read More</button>
-        </div>
+  const navigate = useNavigate();
+  
+  const handleShopNow = () => {
+    navigate("/course");
+  }
 
-        <div className='order-1 md:order-2 w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0'>
-          <img src={bok} alt="Books" className='w-full h-80 object-cover rounded-lg shadow-lg transition-transform transform hover:scale-105' />
+  const handleExploreNow = () => {
+  
+    window.open('https://www.instagram.com/doonsisters_3/profilecard/?igsh=MW1xamlnNW5kMTFoZg==', '_blank');
+  }
+
+  return (
+    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500">
+      <div className="absolute inset-0 flex items-center justify-center text-center text-white px-6 md:px-16 z-10">
+        <div className="space-y-8 md:space-y-12 max-w-2xl">
+          <motion.h1 
+            className="text-4xl md:text-5xl font-extrabold tracking-wide leading-tight md:leading-tight"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            Unveil Your Style with <span className="text-yellow-400">FashionHub</span>
+          </motion.h1>
+
+          <motion.p 
+            className="text-lg md:text-xl opacity-80"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            Discover the latest trends in fashion with our exclusive collection designed for style enthusiasts like you. Upgrade your wardrobe with the best in modern fashion, comfort, and quality.
+          </motion.p>
+
+          <div className="flex justify-center items-center space-x-6">
+            <motion.button 
+              className="bg-yellow-500 hover:bg-yellow-600 text-black py-3 px-6 rounded-full text-lg transition duration-300 transform hover:scale-105"
+              whileHover={{ scale: 1.1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1 }}
+              onClick={handleShopNow}
+            >
+              <FaShoppingCart className="inline-block mr-2" />
+              Shop Now
+            </motion.button>
+
+            <motion.button 
+              className="border-2 border-white hover:border-yellow-500 text-white py-3 px-6 rounded-full text-lg transition duration-300 transform hover:scale-105"
+              whileHover={{ scale: 1.1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.5, duration: 1 }}
+              onClick={handleExploreNow}
+            >
+              <FaTshirt className="inline-block mr-2" />
+              Explore Now
+            </motion.button>
+          </div>
         </div>
       </div>
-    </>
+
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src={clothesImage}
+          alt="Clothing Collection"
+          className="w-full h-full object-cover object-center opacity-30 transition duration-500 transform hover:scale-110"
+        />
+      </div>
+
+      <div className="absolute inset-0 bg-black opacity-40"></div>
+    </div>
   );
 }
 
