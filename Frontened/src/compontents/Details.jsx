@@ -62,7 +62,7 @@ const Details = () => {
             <FontAwesomeIcon icon={faCircleArrowLeft} className="text-lg" />
           </button>
 
-          <Link to="/" className="text-2xl font-extrabold cursor-pointer text-pink-600">
+          <Link to="/" className="text-2xl font-extrabold cursor-pointer text-pink-600 ml-">
             <span className="text-blue-500">Cloth</span>
             <span className="text-yellow-500">Haven</span>
           </Link>

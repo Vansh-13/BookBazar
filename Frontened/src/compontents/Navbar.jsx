@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Login from './Login';
-import image from '/public/k2.png'; 
+import image from '/public/k2.png';
 import { useAuth } from '../context/Authprovider';
 
 function Navbar() {
@@ -60,12 +60,9 @@ function Navbar() {
         }`}
       >
         <div className="navbar-start">
-          <div className="dropdown">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost lg:hidden"
-            >
+   
+          <div className="dropdown lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -88,19 +85,22 @@ function Navbar() {
               {navItems}
             </ul>
           </div>
+
+          <div className="pl--5">
+  <a className="text-2xl font-extrabold cursor-pointer text-pink-600 ml-5 md:ml">
+    <span className="text-blue-500">Cloth</span>
+    <span className="text-yellow-500">Haven</span>
+  </a>
+</div>
           
-          <a className="text-2xl font-extrabold cursor-pointer text-pink-600 ml-5">
-            <span className="text-blue-500">Cloth</span>
-            <span className="text-yellow-500">Haven</span>
-          </a>
         </div>
 
         <div className="navbar-end space-x-4">
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{navItems}</ul>
           </div>
-          
-          <div className="hidden md:block">
+
+          <div className="hidden lg:block">
             <label className="input flex items-center gap-2">
               <input
                 type="text"
@@ -121,33 +121,16 @@ function Navbar() {
               </svg>
             </label>
           </div>
-          
-          <label className="swap swap-rotate">
-  <input
-    type="checkbox"
-    className="theme-controller"
-    onChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-    checked={theme === 'dark'}
-  />
-  
-  {/* <svg
-    className="swap-off h-8 w-8 fill-current text-yellow-500"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-  >
-    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17Z" />
-  </svg>
 
- 
-  <svg
-    className="swap-on h-8 w-8 fill-current text-gray-500"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-  >
-    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36" />
-  </svg> */}
-</label>
-         
+          <label className="swap swap-rotate">
+            <input
+              type="checkbox"
+              className="theme-controller"
+              onChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              checked={theme === 'dark'}
+            />
+          </label>
+
           <div>
             <img
               src={image}
@@ -155,6 +138,7 @@ function Navbar() {
               className="h-8 w-8 md:h-10 md:w-10 object-contain cursor-pointer hover:scale-110 transition-transform duration-300 ease-in-out block"
             />
           </div>
+
           
           <div>
             <a

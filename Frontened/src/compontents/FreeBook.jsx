@@ -109,16 +109,16 @@ import Cards from './Cards';
 import { FaRocket } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion'; 
-import clothesData from './list.json';  // Import the JSON data
+import clothesData from './list.json';  
 
 function FreeBook() {
-    const [clothes, setClothes] = useState([]);  // Use local state
+    const [clothes, setClothes] = useState([]);  
     const navigate = useNavigate();  
 
     useEffect(() => {
-        // Set the local data to the state
+        
         setClothes(clothesData);
-    }, []);  // Empty array ensures this runs only once on mount
+    }, []);  
 
     const settings = {
         dots: true,
@@ -155,7 +155,7 @@ function FreeBook() {
     };
 
     const handleCardClick = (id) => {
-        navigate(`/details/${id}`);  
+        navigate(`/details`);  
     };
 
     return (

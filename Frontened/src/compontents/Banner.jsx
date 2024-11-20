@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FaShoppingCart, FaTshirt } from 'react-icons/fa';  
 import clothesImage from '/public/ii.jpg';  
@@ -13,7 +12,6 @@ function Banner() {
   }
 
   const handleExploreNow = () => {
-  
     window.open('https://www.instagram.com/doonsisters_3/profilecard/?igsh=MW1xamlnNW5kMTFoZg==', '_blank');
   }
 
@@ -22,7 +20,7 @@ function Banner() {
       <div className="absolute inset-0 flex items-center justify-center text-center text-white px-6 md:px-16 z-10">
         <div className="space-y-8 md:space-y-12 max-w-2xl">
           <motion.h1 
-            className="text-4xl md:text-5xl font-extrabold tracking-wide leading-tight md:leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide leading-tight md:leading-tight"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
@@ -31,7 +29,7 @@ function Banner() {
           </motion.h1>
 
           <motion.p 
-            className="text-lg md:text-xl opacity-80"
+            className="text-lg sm:text-xl opacity-80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}

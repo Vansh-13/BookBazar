@@ -11,6 +11,7 @@ import About from './compontents/About';
 import Payment from "./compontents/Payment";
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/ReactToastify.css";
+import Course from './compontents/Course';
 function App() {
   const [authUser, setAuthUser] = useAuth();
   console.log(authUser);
@@ -20,7 +21,7 @@ function App() {
     <ToastContainer/>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/course' element={authUser ? <Couress /> : <Navigate to="/signup" />} />
+        <Route path='/course' element={<Course/>} />
         <Route path='/signup' element={<Signup />} />
         <Route path="/details" element={<Details />} />
         <Route path='/cartpage' element={<Example />} />

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, decreaseCart, getTotal, removeFromCart } from "../../Store/Slices/cartSlices";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import pre from "/public/pre.png";
 import images from "/public/images.png";
@@ -50,9 +50,12 @@ function CartPage() {
             <i className="fas fa-arrow-left text-lg"></i>
           </button>
           <span className="text-3xl font-bold cursor-pointer text-gray-800">
+          <Link to="/" className="text-2xl font-extrabold cursor-pointer text-pink-600 ml-">
             <span className="text-blue-500">Cloth</span>
             <span className="text-yellow-500">Haven</span>
+            </Link>
           </span>
+          
         </div>
 
         <div className="navbar-end flex items-center space-x-4">
@@ -117,7 +120,7 @@ function CartPage() {
                         >
                           Remove
                         </button>
-                        <p className="text-lg font-semibold text-gray-800 mt-2">${cartItem.cartQuantity * cartItem.price}</p>
+                        <p className="text-lg font-semibold text-gray-800 mt-2">₹{cartItem.cartQuantity * cartItem.price}</p>
                       </div>
                     </div>
                   </div>
@@ -129,11 +132,11 @@ function CartPage() {
           <div className="bg-white rounded-lg p-6 shadow-xl sticky top-20">
             <h3 className="text-xl font-semibold text-gray-800">Cart Summary</h3>
             <ul className="text-gray-700 mt-6 space-y-4">
-              <li className="flex justify-between text-sm">Subtotal: <span className="font-bold">${cart.cartTotalAmount}</span></li>
-              <li className="flex justify-between text-sm">Shipping: <span className="font-bold">$2.00</span></li>
-              <li className="flex justify-between text-sm">Tax: <span className="font-bold">$4.00</span></li>
+              <li className="flex justify-between text-sm">Subtotal: <span className="font-bold">₹{cart.cartTotalAmount}</span></li>
+              <li className="flex justify-between text-sm">Shipping: <span className="font-bold">₹2.00</span></li>
+              <li className="flex justify-between text-sm">Tax: <span className="font-bold">₹4.00</span></li>
               <hr className="border-gray-300" />
-              <li className="flex justify-between text-sm font-bold">Total: <span className="font-bold">${(cart.cartTotalAmount + 2 + 4).toFixed(2)}</span></li>
+              <li className="flex justify-between text-sm font-bold">Total: <span className="font-bold">₹{(cart.cartTotalAmount + 2 + 4).toFixed(2)}</span></li>
             </ul>
 
             <div className="mt-8 space-y-2">
