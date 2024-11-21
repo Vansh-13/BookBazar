@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function Cards({ item }) {
   const navigate = useNavigate();
 
-  console.log("Received item in Cards2:", item);
+  console.log("Received item in Cards:", item);
 
   const handleCardClick = () => {
     console.log("Navigating with item:", item);
@@ -12,16 +12,19 @@ function Cards({ item }) {
     navigate('/details');
   };
 
+  const imageUrl = item?.image || 'https://via.placeholder.com/300'; 
+  
   return (
     <div
       className="card bg-base-100 w-full sm:w-72 md:w-80 shadow-xl dark:bg-slate-900 dark:text-white dark:border cursor-pointer transform transition-all hover:scale-105 hover:rotate-2"
       onClick={handleCardClick}
     >
-      <figure className="h-32 sm:h-40 md:h-44 flex items-center justify-center overflow-hidden mb-4">
+      
+      <figure className="h-44 sm:h-52 md:h-64 flex items-center justify-center overflow-hidden mb-4">
         <img
-          src={item?.image || 'https://via.placeholder.com/300'}
+          src={imageUrl}
           alt={item?.title || 'Product Image'}
-          className="object-cover w-32 sm:w-40 md:w-44 transition-transform duration-300 ease-in-out"
+          className="object-cover w-full h-full transition-transform duration-300 ease-in-out"
         />
       </figure>
 
@@ -32,11 +35,11 @@ function Cards({ item }) {
             {item?.category || 'Uncategorized'}
           </div>
         </h2>
-        
+
         <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
           {item?.title || 'No description available'}
         </p>
-        
+
         <div className="card-actions justify-center mt-4 space-x-4">
           <div className="badge badge-outline text-gray-800 dark:text-white">
             ₹{item?.price ? item.price.toFixed(2) : '0.00'}

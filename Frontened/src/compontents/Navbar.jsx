@@ -59,8 +59,8 @@ function Navbar() {
           theme === 'dark' ? 'bg-gray-900' : 'bg-base-100'
         }`}
       >
-        <div className="navbar-start">
-   
+        <div className="navbar-start flex items-center space-x-2">
+          {/* Dropdown menu for small screens */}
           <div className="dropdown lg:hidden">
             <div tabIndex={0} role="button" className="btn btn-ghost">
               <svg
@@ -86,16 +86,16 @@ function Navbar() {
             </ul>
           </div>
 
-          <div className="pl--5">
-  <a className="text-2xl font-extrabold cursor-pointer text-pink-600 ml-5 md:ml">
-    <span className="text-blue-500">Cloth</span>
-    <span className="text-yellow-500">Haven</span>
-  </a>
-</div>
-          
+          <div className="flex items-center space-x-2 pl--10 md:pl-2 lg:pl-6">
+            <a className="text-2xl font-extrabold cursor-pointer text-pink-600">
+              <span className="text-blue-500">Cloth</span>
+              <span className="text-yellow-500">Haven</span>
+            </a>
+          </div>
         </div>
 
         <div className="navbar-end space-x-4">
+     
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{navItems}</ul>
           </div>
@@ -131,6 +131,7 @@ function Navbar() {
             />
           </label>
 
+          {/* Cart Icon */}
           <div>
             <img
               src={image}
@@ -139,7 +140,7 @@ function Navbar() {
             />
           </div>
 
-          
+          {/* Login button */}
           <div>
             <a
               className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 duration-300 cursor-pointer pl-4"
