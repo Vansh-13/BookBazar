@@ -86,7 +86,9 @@ function Navbar() {
             </ul>
           </div>
 
-          <div className="flex items-center space-x-2 pl--10 md:pl-2 lg:pl-6">
+          <div className="flex items-center space-x-2 pl--10console.log('Navbar component rendered');
+console.log('Theme:', theme);
+console.log('Sticky state:', sticky); F md:pl-2 lg:pl-6">
             <a className="text-2xl font-extrabold cursor-pointer text-pink-600">
               <span className="text-blue-500">Cloth</span>
               <span className="text-yellow-500">Haven</span>

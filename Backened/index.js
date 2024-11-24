@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(urlencoded({extended:true}));
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4001;
 const URI = process.env.MongoDBURI;
 
 try{
@@ -29,7 +29,6 @@ try{
 
 }
 
-app.use("/book",bookRoute);
 app.use("/user",userRoute);
 
 app.listen(port, (err) => {

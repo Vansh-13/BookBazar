@@ -119,7 +119,7 @@ export default function PaymentGateway() {
 
                 <div className="mb-4">
                   <h6 className="text-muted">Order Summary</h6>
-                  <p className="text-dark">Total: ${orderAmount.toFixed(2)}</p>
+                  <p className="text-dark">Total: ₹{orderAmount.toFixed(2)}</p>
                 </div>
 
                
